@@ -4,18 +4,22 @@
       <el-header class="sys-header">一张图项目系统</el-header>
       <el-container class="app-content-pannel">
         <el-aside width="200px" class="sys-menu">左侧菜单</el-aside>
-        <el-main>地图区域</el-main>
+        <el-main class="sys-content">
+          <MapView />
+        </el-main>
       </el-container>
     </el-container>
   </div>
 </template>
 
 <script>
-
+import MapView from './components/common/MapView.vue'
 export default {
   name: 'App',
-  components: {   }
-}
+  components: {
+    MapView,
+  },
+};
 </script>
 
 <style>
@@ -26,18 +30,25 @@ body,
   width: 100%;
   height: 100%;
   margin: 0;
-} 
-.app-out-pannel, 
+}
+
+.app-out-pannel,
 .app-content-pannel {
   height: 100%;
 }
+
 .sys-header {
-  background-color: #409EFF;
+  background-color: #409eff;
   line-height: 60px;
   color: white;
   font-size: 20px;
 }
+
 .sys-menu {
-  background-color: #C0C4CC;
+  background-color: #c0c4cc;
+}
+
+.sys-content {
+  padding: 5px !important;
 }
 </style>
